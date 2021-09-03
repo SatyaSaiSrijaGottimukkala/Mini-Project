@@ -4,4 +4,4 @@ Team Members are:
 Srija
 KondaReddy
 VishnuPriya
-Rahul
+Rahul Acharya
