@@ -1,4 +1,3 @@
-import { alternatives } from "joi";
 import React ,{Component} from "react";
 import {
     StyleSheet,Text, View, TouchableOpacity, TouchableHighlight, Image, Alert, TextInput, Button
