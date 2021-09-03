@@ -2,6 +2,6 @@
 long stay villa
 Team Members are:
 Srija
-KondaReddy
+KondaReddy T
 VishnuPriya
 Rahul Acharya
