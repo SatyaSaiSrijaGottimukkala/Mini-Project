@@ -5,7 +5,7 @@ import { Image,FlatList,
    TouchableHighlight,Alert,
    View } from "react-native";
 import {getLocations} from '../services/locationData';
-
+import Icon1 from 'react-native-vector-icons/FontAwesome5';
 const Item = ({ item, onAddCart,onMore, onPress,onDelete, onEdit,style }) => (
 
     <SafeAreaView style={styles.container1}>
@@ -14,7 +14,8 @@ const Item = ({ item, onAddCart,onMore, onPress,onDelete, onEdit,style }) => (
         </View>
         <Text style={styles.description}>{item.desc}</Text>
         <Text style={styles.amount}>{item.price}</Text>
-        <View style={{ flexDirection: "row" }}>
+        <View style={{ flexDirection: "row" ,marginTop:10}}>
+          <Icon1 style ={styles.img3} name = "map-marker-alt" size={30}/>
             <Text style={styles.place}>{item.place}</Text>
             <TouchableHighlight style={[styles.buttonContainer,styles.button1]} >
                 <Text style={styles.loginText}>MORE</Text>
@@ -31,13 +32,11 @@ const Item = ({ item, onAddCart,onMore, onPress,onDelete, onEdit,style }) => (
   
 );
 
-const CustomerApp =  () => {
+const VillaApp =  () => {
   const [selectedId, setSelectedId] = useState(null);
   const [count, doRender] = useState(0);
   const [customers, setCustomers] = useState([]);
-//console.log("DATA: "+JSON.stringify(DATA))
   const renderItem = ({ item }) => {
-    //const backgroundColor = item.id === selectedId ? "#ffffff" :"#ffffff";
     return (
       <Item
         item={item}
@@ -81,18 +80,23 @@ const styles = StyleSheet.create({
         width:370
     },
     description:{
-        fontSize:19,
+        fontSize:20,
+        fontFamily:'Avenir',
+        marginLeft:10,
         margin:5
 
     },
     amount:{
         fontSize:22,
-        marginLeft:5,
-        color:"#a52a2a"
+        marginLeft:10,
+        color:"#a52a2a",
     },
     place:{
         fontSize:20,
-        margin:5
+        marginTop:10,
+        marginLeft:5,
+        fontFamily:'Avenir-Light',
+        fontWeight:'400'
     },
     buttonContainer:{
         flexDirection: 'row',
@@ -103,8 +107,14 @@ const styles = StyleSheet.create({
         marginBottom:10
 
     },
+    img3:{
+      marginLeft:10,
+      marginTop:5
+
+
+    },
     button1:{
-        marginLeft:90,
+        marginLeft:60,
         marginRight:10,
         width:90,
         height:40,
@@ -113,72 +123,23 @@ const styles = StyleSheet.create({
         width:120,
         height:40,
     },
-    loginText:{
+    /*loginText:{
         color: 'white',
         fontSize:20,
         width:100,
-        height:40
-    },
+        height:40,
+        fontWeight:"800"
+    },*/
   maincontainer: {
     flex: 1,
     backgroundColor:"#ffffff"
   },
-  container: {
-    flex: 1,
-    alignItems:"center",
-    backgroundColor:"#fbfbfb",
-    marginTop: StatusBar.currentHeight || 1,
-  },
-  
-buttonContainer1: {
-  height: 45,
-  flexDirection: 'row',
-  justifyContent: 'center',
-  alignItems: 'center',
-  marginBottom: 20,
-  marginTop:30,
-  width: 250,
-  marginStart:65,
-  borderRadius: 20,
-  
-},
-loginButton: {
-  backgroundColor: "#6200ee",
-  fontWeight:"800"
-},
-loginButton1: {
-  backgroundColor: "#ffffff",
-  fontWeight:"800"
-},
+
 loginText: {
     color: 'white',
-    fontWeight:"800"
-},
-  item: {
-    padding: 0,
-    marginVertical: 8,
-    marginHorizontal: 16,
-   
-  },
-  title: {
-    fontSize: 24,
-   
-
-  },
-  details: {
-    fontSize: 15,
-    
-  },
-  
-  bookCover: {
-    
-    height: 150,
-    width: 90,
-    flex: 0.9,
-    marginEnd:10
-
-  }
-  
+    fontWeight:"800",
+    fontSize:17
+}, 
 });
 
-export default CustomerApp;
+export default VillaApp;
