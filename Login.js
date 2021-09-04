@@ -2,6 +2,7 @@ import React ,{Component} from "react";
 import {
     StyleSheet,Text, View, TouchableOpacity, TouchableHighlight, Image, Alert, TextInput, Button
 } from "react-native";
+import Icon from 'react-native-vector-icons/Feather'
 
 export default class Login extends Component {
     constructor(props){
@@ -34,11 +35,10 @@ export default class Login extends Component {
     render(){
         return (
             <View style={styles.container}>
-            <Text style={styles.text,{"fontSize":30,"marginLeft":-50}} >Login Account</Text>
-            <Text style={styles.text,{"marginLeft":-200}}
-                    >email</Text>
+            <View><Text style={styles.text,{"fontSize":30,"marginLeft":-50}} >Login Account</Text></View>
+            <View><Text style={styles.text,{"marginLeft":-120}}
+                    >email</Text></View>
             <View style={styles.inputContainer}>
-    
                 <TextInput style={styles.inputs}
                         placeholder="email"
                         keyboardType="email-address"
@@ -49,14 +49,13 @@ export default class Login extends Component {
             <Text style={styles.text,{"marginLeft":-170}}
                     >password</Text>
             <View style={styles.inputContainer}>
-            <Image style={styles.inputIcon}
-                        source={{ uri: 'file:///Users/a845604yara.com/Downloads/eye-off.svg' }} />
                 <TextInput style={styles.inputs}
                         placeholder="password"
                         secureTextEntry={true}
                         underlineColorAndroid='transparent'
                         value={this.state.password}
                         onChangeText={(password) => this.setState({ password })} />
+                <Icon style={{"marginLeft":210,"marginBottom":10}} size={20}  name="eye-off"/>
             </View>
             
             <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onLoginButton()}>
@@ -89,7 +88,7 @@ const styles = StyleSheet.create({
     inputs: {
         height: 45,
         marginLeft: 16,
-        borderBottomColor: '#FFFFFF',
+        borderColor: 'blue',
         flex: 1,
     },
     image:{
@@ -106,6 +105,7 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         width: 250,
         borderRadius: 30,
+
     },
     loginButton: {
         backgroundColor: "#8B0000",
