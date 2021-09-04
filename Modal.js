@@ -1,8 +1,10 @@
+//this page is to get a pop up like Alert which should pop after we press book button
+//import this file in the file corresponding to the screen pop up has to come
+//go to sample_home.js and add the lines that has comments in the file corresponding to the screen pop up has to come
+
 import React, {useState, useEffect} from 'react';
 import { Modal,View, StyleSheet,Button, Text ,TouchableOpacity } from 'react-native'; 
 import { useNavigation } from '@react-navigation/core';
-
-
 
 export default function AlertView (value){
     console.log("in modal",value)
