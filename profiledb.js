@@ -1,4 +1,4 @@
-//This is normal data without local storage
+//This is normal data without local storage, minor changes required
 var customers =[
     {id:'099090',name:"Vivek Singhwal",email:"vivek@pyther.com", phone:"5433233232", address:"Bengaluru",city:"India"}
    
