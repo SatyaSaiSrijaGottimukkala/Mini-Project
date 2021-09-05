@@ -12,13 +12,13 @@ export default class Login extends Component {
         headerTitile:'login'
     }
     state={
-        email:"",
-        password:""
+        email:"Longstay",
+        password:"longstay"
     }
 
     onLoginButton=()=>{
         console.log(".....you clicked login button.....");
-        if(this.state.email==="A"&& this.state.password==="a"){
+        if(this.state.email==="Longstay"&& this.state.password==="longstay"){
             this.props.navigation.navigate('Tabs')
             //alert("navigating to home")
             this.setState({
@@ -32,18 +32,14 @@ export default class Login extends Component {
     }
 
     onForgotButton=()=>{
-        
-       
-            alert("Sent a verification e-mail")
-        
-        
+            alert("Sent a verification e-mail")   
     }
     
     render(){
         return (
             <View style={styles.container}>
-            <View><Text style={styles.text,{"fontSize":30,"marginLeft":-50,"marginBottom":30}} >Login Account</Text></View>
-            <View><Text style={styles.text,{"marginLeft":-120,"marginBottom":10}}
+            <View><Text style={styles.text,{"fontFamily":"Montserrat-Bold","fontSize":30,"marginLeft":-25,"marginBottom":30}} >Login Account</Text></View>
+            <View><Text style={styles.text,{"marginLeft":-125,"marginBottom":10}}
                     >Email</Text></View>
             <View style={styles.inputContainer}>
                 <TextInput style={styles.inputs}
@@ -53,7 +49,7 @@ export default class Login extends Component {
                         value={this.state.email}
                         onChangeText={(email) => this.setState({ email })} />
             </View>
-            <Text style={styles.text,{"marginLeft":-170,"marginBottom":10}}
+            <Text style={styles.text,{"marginLeft":-187,"marginBottom":10}}
                     >Password</Text>
             <View style={styles.inputContainer}>
                 <TextInput style={styles.inputs2}
@@ -66,9 +62,12 @@ export default class Login extends Component {
             </View>
             
             <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onLoginButton()}>
-            <Text style={styles.loginText}>Login</Text>
+            <Text style={styles.loginText,{"fontFamily":"Montserrat-Bold","color": 'white'}}>LOGIN</Text>
             </TouchableHighlight>
-            <Button onPress={() => this.onForgotButton()} color="#8B0000" title="FORGOT PASSWORD" ></Button>
+            <TouchableHighlight style={{"fontSize":10}} onPress={() => this.onForgotButton()}>
+            <Text style={{color:"#B2002D"}}>FORGOT PASSWORD</Text>
+            </TouchableHighlight>
+            
 
             </View>
         )
@@ -79,13 +78,13 @@ const styles = StyleSheet.create({
         flex:1,
         justifyContent:"center",
         alignItems:"center",
-        backgroundColor:"#DCDCDC"
+        backgroundColor:"#FFFFFF"
     },
     inputContainer:{
-        borderBottomColor: '#F5FCFF',
+        borderColor: 'black',
         backgroundColor: '#FFFFFF',
         borderRadius: 30,
-        borderBottomWidth: 1,
+        borderWidth: 0.25,
         width: 250,
         height: 45,
         marginBottom: 20,
@@ -123,7 +122,7 @@ const styles = StyleSheet.create({
 
     },
     loginButton: {
-        backgroundColor: "#8B0000",
+        backgroundColor: "#B2002D",
     },
     loginText: {
         color: 'white',
