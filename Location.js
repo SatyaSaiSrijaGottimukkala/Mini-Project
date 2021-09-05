@@ -6,7 +6,9 @@ import { Image,FlatList,
    View } from "react-native";
 import {getLocations} from '../services/locationData';
 import Icon1 from 'react-native-vector-icons/FontAwesome5';
-const Item = ({ item, onAddCart,onMore, onPress,onDelete, onEdit,style }) => (
+import { useNavigation } from '@react-navigation/native';
+
+const Item = ({ item, move,move1,onAddCart,onMore, onPress,onDelete, onEdit,style }) => (
 
     <SafeAreaView style={styles.container1}>
         <View style={styles.box}>
@@ -17,10 +19,10 @@ const Item = ({ item, onAddCart,onMore, onPress,onDelete, onEdit,style }) => (
         <View style={{ flexDirection: "row" ,marginTop:10}}>
           <Icon1 style ={styles.img3} name = "map-marker-alt" size={30}/>
             <Text style={styles.place}>{item.place}</Text>
-            <TouchableHighlight style={[styles.buttonContainer,styles.button1]} >
+            <TouchableHighlight onPress={() => {move1()}} style={[styles.buttonContainer,styles.button1]} >
                 <Text style={styles.loginText}>MORE</Text>
             </TouchableHighlight>
-            <TouchableHighlight style={[styles.buttonContainer,styles.button2]} >
+            <TouchableHighlight onPress={() => {move()}} style={[styles.buttonContainer,styles.button2]} >
                 <Text style={styles.loginText}>Book Villa</Text>
             </TouchableHighlight>
             
@@ -33,6 +35,7 @@ const Item = ({ item, onAddCart,onMore, onPress,onDelete, onEdit,style }) => (
 );
 
 const VillaApp =  () => {
+  let navigation = useNavigation();
   const [selectedId, setSelectedId] = useState(null);
   const [count, doRender] = useState(0);
   const [customers, setCustomers] = useState([]);
@@ -41,6 +44,10 @@ const VillaApp =  () => {
       <Item
         item={item}
         onPress={() => setSelectedId(item.id)}
+        move={() =>
+          navigation.navigate("Confirm")
+        }
+        move1={()=>navigation.navigate("Detail", { id: item.id})}
       />
     );
   };
