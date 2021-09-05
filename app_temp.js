@@ -10,8 +10,6 @@ import EditCustomers from './components/EditCustomer';
 import LocalStorage from './components/LocalStorageAsync';
 import Student from './components/Tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-//import profile from './components/profile1';
-//import editprofile from './components/EditProfile';
 import VillaDetails from './components/VillaDetails';
 import StartPage from './components/StartPage';
 import Login from './components/LoginVilla';
