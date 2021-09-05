@@ -142,7 +142,6 @@ function App() {
       <Stack.Screen name="Tabs" component={Tabs} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="VillaDetails" component={VillaDetails} />
-
       </Stack.Navigator>
    </NavigationContainer>
   );
