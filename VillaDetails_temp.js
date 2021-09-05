@@ -73,7 +73,6 @@ const Item = ({ item, onAddCart,onMore, onPress,onDelete, onEdit,style }) => (
 const VillaDetails = (props) => {
         const [selectedId, setSelectedId] = useState(null);
         const [count, doRender] = useState(0);
-        const [customers, setCustomers] = useState([]);
         var arr = []
         arr.push(getLocationById(4));
         
