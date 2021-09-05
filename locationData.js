@@ -1,3 +1,4 @@
+//This is location data file
 let DATA = [
     {id:'1', "desc":"Vill Jane will astonish every guest with its breathtaking views", "price":"$400", "total":"$2400","place":"Aspen", "cover":"//training.pyther.com/yara/15-day/02-project-LongStay/001_villa.jpg"},
     {id:'2', "desc":"Brick villa which attracts the viewers with its awesome finishing and mindblowing weather", "price":"$550", "total":"$3300","place":"Prague", "cover":"//training.pyther.com/yara/15-day/02-project-LongStay/002_villa.jpg"},
