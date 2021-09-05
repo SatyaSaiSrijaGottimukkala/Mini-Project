@@ -1,15 +1,16 @@
-import React, { useState , useEffect} from "react";
+import React, { useState} from "react";
 import { Image,FlatList,
-  SafeAreaView, StatusBar, Button,
+  SafeAreaView,
    StyleSheet, Text, TouchableOpacity, 
-   TouchableHighlight,Alert,
+   TouchableHighlight,
    View } from "react-native";
 import {getLocationById} from '../services/LocationData';
 import Icon from 'react-native-vector-icons/Entypo';
-import Icon1 from 'react-native-vector-icons/FontAwesome5';
 import Icon2 from 'react-native-vector-icons/AntDesign'
 import Icon3 from 'react-native-vector-icons/FontAwesome5'
-import { ListItem } from 'react-native-elements'
+import { useNavigation } from '@react-navigation/native';
+import AlertView from './Modal'; 
+
 
 
 const a = () => {
@@ -21,14 +22,17 @@ const a = () => {
     
 }
 
-const Item = ({ item, onAddCart,onMore, onPress,onDelete, onEdit,style }) => (
+const Item = ({ item,toHome}) => {
+    const [alertVisible, setalertVisible]=useState(false)
+
+    return (
     <SafeAreaView style={styles.container1}>
         <View style={styles.head1}>
-        <TouchableOpacity onPress={()=>console.log("back>>>>>>>")}style={{ flexDirection: "row"}}>
+        <TouchableOpacity onPress={toHome}style={{ flexDirection: "row"}}>
             <Icon size={40} style = {styles.img1} name="chevron-left"/>
         </TouchableOpacity>
             <Text style={styles.text1}>Details</Text>
-            <Text style={styles.text2}>Price :{item.total}</Text>
+            <Text style={styles.text2}>Price :{item.price}</Text>
         </View>
         <View style={styles.box}>
             <Image style={styles.img2} source={{uri: 'https:'+item.cover}}/>
@@ -49,38 +53,39 @@ const Item = ({ item, onAddCart,onMore, onPress,onDelete, onEdit,style }) => (
         <Text style={styles.description}>{item.desc}</Text>
         
         <View style={{ flexDirection: "row"}}>
-        <TouchableHighlight style={[styles.buttonContainer3,styles.button3]} >
+        <TouchableHighlight style={[styles.buttonContainer3,styles.button3]}onPress={toHome} >
                 <View style={{flexDirection:'row'}}>
                     <Text style={styles.loginText2}>SHARE THIS</Text>
                     <Icon3 style = {styles.img5} size={27} name="arrow-circle-up"/>
                 </View> 
             </TouchableHighlight>
-            <TouchableHighlight style={[styles.buttonContainer2,styles.button2]} >
+            <TouchableHighlight style={[styles.buttonContainer2,styles.button2]} onPress={()=>setalertVisible(true)}>
                 <View style={{flexDirection:'row'}}>
                     <Text style={styles.loginText}>Book  </Text>
                     <Icon2 style = {styles.img4} size={27} name="rightcircle"/>
                 </View> 
             </TouchableHighlight>
-        </View>
+            <AlertView visibility={alertVisible} itemSelected={item}></AlertView></View>
         
        
         
-    </SafeAreaView>
+    </SafeAreaView> );
 
-)
+}
 
 
 const VillaDetails = (props) => {
         const [selectedId, setSelectedId] = useState(null);
-        const [count, doRender] = useState(0);
+        const navigation=useNavigation();
         var arr = []
-        arr.push(getLocationById(4));
+        arr.push(getLocationById(props.route.params.id));
         
         const renderItem = ({ item }) => {
           return (
             <Item
               item={item}
               onPress={() => setSelectedId(item.id)}
+              toHome={()=>navigation.navigate("LocationList")}
             />
           );
         };
@@ -186,7 +191,7 @@ const styles = StyleSheet.create({
     description:{
         fontSize:25,
         margin:15,
-        marginTop:30,
+        marginTop:20,
         marginLeft:25,
         alignItems:'center',
         justifyContent: 'center'
@@ -266,14 +271,14 @@ const styles = StyleSheet.create({
         width:160,
         height:60,
         marginLeft:50,
-        marginTop:15,
+        marginTop:10,
         justifyContent: 'center',
         alignItems: 'center'
     },
     button3:{
         width:160,
         height:60,
-        marginTop:15,
+        marginTop:10,
         marginLeft:10,
         justifyContent: 'center',
         alignItems: 'center'
@@ -297,8 +302,4 @@ const styles = StyleSheet.create({
         marginTop:5,
         marginLeft:4
     }
-
-
-
-    
 })
