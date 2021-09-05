@@ -18,8 +18,8 @@ export default class Login extends Component {
 
     onLoginButton=()=>{
         console.log(".....you clicked login button.....");
-        if(this.state.email==="Longstay"&& this.state.password==="longstay"){
-            this.props.navigation.navigate('Home')
+        if(this.state.email==="A"&& this.state.password==="a"){
+            this.props.navigation.navigate('Tabs')
             //alert("navigating to home")
             this.setState({
                 email:"",
@@ -31,13 +31,20 @@ export default class Login extends Component {
         
     }
 
+    onForgotButton=()=>{
+        
+       
+            alert("Sent a verification e-mail")
+        
+        
+    }
     
     render(){
         return (
             <View style={styles.container}>
-            <View><Text style={styles.text,{"fontSize":30,"marginLeft":-50}} >Login Account</Text></View>
-            <View><Text style={styles.text,{"marginLeft":-120}}
-                    >email</Text></View>
+            <View><Text style={styles.text,{"fontSize":30,"marginLeft":-50,"marginBottom":30}} >Login Account</Text></View>
+            <View><Text style={styles.text,{"marginLeft":-120,"marginBottom":10}}
+                    >Email</Text></View>
             <View style={styles.inputContainer}>
                 <TextInput style={styles.inputs}
                         placeholder="email"
@@ -46,22 +53,22 @@ export default class Login extends Component {
                         value={this.state.email}
                         onChangeText={(email) => this.setState({ email })} />
             </View>
-            <Text style={styles.text,{"marginLeft":-170}}
-                    >password</Text>
+            <Text style={styles.text,{"marginLeft":-170,"marginBottom":10}}
+                    >Password</Text>
             <View style={styles.inputContainer}>
-                <TextInput style={styles.inputs}
+                <TextInput style={styles.inputs2}
                         placeholder="password"
                         secureTextEntry={true}
                         underlineColorAndroid='transparent'
                         value={this.state.password}
                         onChangeText={(password) => this.setState({ password })} />
-                <Icon style={{"marginLeft":210,"marginBottom":10}} size={20}  name="eye-off"/>
+                <Icon style={{"marginRight":14,"marginTop":13}} size={20}  name="eye-off"/>
             </View>
             
             <TouchableHighlight style={[styles.buttonContainer, styles.loginButton]} onPress={() => this.onLoginButton()}>
             <Text style={styles.loginText}>Login</Text>
             </TouchableHighlight>
-            <Button  color="#8B0000" title="FORGOT PASSWORD" ></Button>
+            <Button onPress={() => this.onForgotButton()} color="#8B0000" title="FORGOT PASSWORD" ></Button>
 
             </View>
         )
@@ -82,7 +89,7 @@ const styles = StyleSheet.create({
         width: 250,
         height: 45,
         marginBottom: 20,
-        flexDirection: 'column',
+        flexDirection: 'row',
         alignItems: 'flex-start' 
     },
     inputs: {
@@ -90,6 +97,14 @@ const styles = StyleSheet.create({
         marginLeft: 16,
         borderColor: 'blue',
         flex: 1,
+    },
+    inputs2: {
+        height: 45,
+        marginLeft: 16,
+        borderColor: 'blue',
+        flex: 1,
+        justifyContent:'center',
+        alignItems: 'center',
     },
     image:{
         width:60,
@@ -113,7 +128,12 @@ const styles = StyleSheet.create({
     loginText: {
         color: 'white',
     },
+    img1:{
+        color:'#b22222',
+        marginLeft:2
+    },
     text :{
+        
         fontSize:15,
         marginLeft:-150,
 
