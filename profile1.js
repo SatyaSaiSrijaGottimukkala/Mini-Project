@@ -12,7 +12,7 @@ import { ListItem } from 'react-native-elements'
 import { getCustomers,deleteCustomer } from "../service/CustomerDB1";
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
-
+import ImagePicker from 'react-native-image-crop-picker';
 
 
 
@@ -99,7 +99,7 @@ useEffect(()=>{
         </View>
       </View>
 
- { /*}     <View style={styles.userInfoSection}>
+ { /*     <View style={styles.userInfoSection}>
         <View style={styles.row}>
     
           <Text style={{color:"#777777", marginLeft: 20}}>Kolkata, India</Text>
