@@ -9,10 +9,10 @@ import {
 } from 'react-native-paper';
 import { ListItem } from 'react-native-elements'
 //Icon add in the above list
-import { getCustomers,deleteCustomer } from "../service/CustomerDB1";
+import { getCustomers,deleteCustomer } from "../services/CustomerVilla";
 
 import Icon from 'react-native-vector-icons/FontAwesome5';
-import ImagePicker from 'react-native-image-crop-picker';
+
 
 
 
@@ -80,45 +80,25 @@ useEffect(()=>{
           <View style={{marginLeft: 20}}>
             <Title style={[styles.title, {
               marginTop:15,
+              marginRight: 155,
               marginBottom: 5,
+              color:"#777777"
             }]}>{cus[0].name}</Title>
             { /* <Caption style={styles.caption}>@j_doe</Caption> */ }
-            <Text style={{color:"#777777", marginLeft: 0,marginTop: 5}}>{cus[0].email}</Text>
-
-           <View style={styles.buttonContainer}>
-        <TouchableHighlight style={{flexDirection: 'row',color:"#777777", marginRight: 95,marginTop: 15,width: 150, borderRadius: 30, height: 45, backgroundColor: "#DCDCDC",  justifyContent: 'center',alignSelf: 'center',
+      <Text style={{color:"#777777", marginLeft: 0,marginTop: 5}}>{cus[0].email}</Text>
+      <View style={styles.buttonContainer}>
+      <TouchableHighlight style={{flexDirection: 'row',color:"#777777", marginRight: 130,marginTop: 15,width: 140, borderRadius: 20,borderWidth: 0.25, height: 35, backgroundColor: "#FFFFFF",  borderColor: '#777777',justifyContent: 'center',alignSelf: 'center',
     alignItems:'center'}} 
     
     onPress={() =>
         navigation.navigate("EditProfile", { id: item.id, name: item.name, email: item.email, phone: item.phone, address: item.address,city: item.city })}>
-                    <Text style={styles.loginText}>Edit Profile</Text>
-        </TouchableHighlight>
+      <Text style={styles.loginText,{ "fontFamily":"Montserrat-Bold",color:"#777777"}}>EDIT PROFILE</Text>
+      </TouchableHighlight>
 
-        </View>  
-     </View>
-        </View>
+      </View>  
       </View>
-
- { /*     <View style={styles.userInfoSection}>
-        <View style={styles.row}>
-    
-          <Text style={{color:"#777777", marginLeft: 20}}>Kolkata, India</Text>
-        </View>
-        <View style={styles.row}>
-      
-          <Text style={{color:"#777777", marginLeft: 20}}>+91-900000009</Text>
-        </View>
-        <View style={styles.row}>
-      
-          <Text style={{color:"#777777", marginLeft: 20}}>john_doe@email.com</Text>
-        </View>
-        </View> */}
-
-
-
-
-     {/*  */}
-
+      </View>
+      </View>
       <View>
   {
     list1.map((item, i) => (
@@ -199,7 +179,7 @@ const styles = StyleSheet.create({
     borderRadius: 30,
   },
   loginButton: {
-    backgroundColor: "#ffffff",
+    backgroundColor: "#DCDCDC",
   },
   loginText: {
     color: '#777777',
