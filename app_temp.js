@@ -49,24 +49,6 @@ notification: 'rgb(255, 69, 58)',
 
 
 
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
-      <Menu/>
-      <Text>Home Screen</Text>
-      <LocalStorage/>
-    </View>
-  );
-}
-
-function AboutScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
-      <Menu/>
-      <Text>About Screen</Text>
-    </View>
-  );
-}
 
 const Stack = createStackNavigator();
 
@@ -170,8 +152,4 @@ function App() {
 }
 export default App;
 
-/*<Stack.Screen name="Customers" component={CustomerApp} />
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="About" component={Student} />
-      <Stack.Screen name="Add Customer" component={AddCustomers} />
-      <Stack.Screen name="Edit Customer" component={EditCustomers} />*/
+
