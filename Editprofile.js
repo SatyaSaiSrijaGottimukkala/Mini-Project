@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
     // shadowColor: '#000000',
     // shadowOffset: {width: 0, height: 0},
     // shadowRadius: 5,
-    // shadowOpacity: 0.4,
+    // shadowOpacity: 0.4
   },
   header: {
     backgroundColor: '#FFFFFF',
