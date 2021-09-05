@@ -3,14 +3,13 @@ import {View, SafeAreaView, StyleSheet,TouchableHighlight} from 'react-native';
 import {
   Avatar,
   Title,
-  Caption,
   Text,
-  TouchableRipple,
+  TouchableOpacity
 } from 'react-native-paper';
 import { ListItem } from 'react-native-elements'
 //Icon add in the above list
 import { getCustomers,deleteCustomer } from "../services/CustomerVilla";
-
+import Iconn from 'react-native-vector-icons/Entypo';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
 
@@ -47,7 +46,6 @@ var cus = getCustomers();
 var item = cus[0];
 const [cnt, setcnt] = useState(0);
 const [customers, setCustomers] = useState([]);
-
 loadCustomer = () =>{
   let list = getCustomers();
   setCustomers(list)
@@ -64,25 +62,26 @@ useEffect(()=>{
 },[navigation]);
 
 
-
-
   return (
     <SafeAreaView style={styles.container}>
-
+       <TouchableHighlight  onPress={()=>{navigation.navigate("LocationList")}}>
+            <Iconn size={50} style = {styles.img1,{color:"#B2002D"}} name="chevron-left"/>
+            </TouchableHighlight>
       <View style={styles.userInfoSection}>
-        <View style={{flexDirection: 'row', marginTop: 15}}>
+        <View style={{flexDirection: 'row'}}>
           <Avatar.Image 
             source={{
               uri: 'https://expertphotography.b-cdn.net/wp-content/uploads/2020/08/social-media-profile-photos-3.jpg',
             }}
-            size={80}
+            size={100}
           />
-          <View style={{marginLeft: 20}}>
+          <View style={{marginLeft: 60}}>
             <Title style={[styles.title, {
-              marginTop:15,
-              marginRight: 155,
+              marginTop:10,
+              marginRight: 145,
               marginBottom: 5,
-              color:"#777777"
+              color:"#777777",
+              fontSize:25
             }]}>{cus[0].name}</Title>
             { /* <Caption style={styles.caption}>@j_doe</Caption> */ }
       <Text style={{color:"#777777", marginLeft: 0,marginTop: 5}}>{cus[0].email}</Text>
