@@ -135,7 +135,7 @@ const Tab = createBottomTabNavigator();
 
 function App() {
   return (
-   <NavigationContainer Theme={MyTheme}>
+   <NavigationContainer >
       <Stack.Navigator Theme={MyTheme}>
       <Stack.Screen name="StartPage" component={StartPage} />
       <Stack.Screen name="Login" component={Login} />
