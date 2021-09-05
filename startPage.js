@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet,Button,StatusBar,Image, SafeAreaView,Text, TouchableHighlight,View, TextInput, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign'
-
+import ImagePicker from 'react-native-image-crop-picker';
 export default function StartPage() {
     return (
         <SafeAreaView style={styles.container}>
