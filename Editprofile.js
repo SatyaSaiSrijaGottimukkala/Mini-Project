@@ -12,11 +12,16 @@ import {
 
 
 import Animated from 'react-native-reanimated';
-import { updateCustomer } from '../service/CustomerDB1';
+import { updateCustomer } from '../services/CustomerVilla';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import Feather from 'react-native-vector-icons/Feather';
+import {useTheme} from 'react-native-paper';
 
 
 
 const EditProfileScreen = (props) => {
+  const {colors} = useTheme();
     const [name, onChangeName] = React.useState(props.route.params.name);
     const [email, onChangeEmail] = React.useState(props.route.params.email);
     const [address, onChangeAddress] = React.useState(props.route.params.address);
@@ -36,7 +41,7 @@ const EditProfileScreen = (props) => {
     updateCustomer(customer);
     console.log("cust",customer)
     setcnt(cnt+1)
-   props.navigation.navigate('profile');
+   props.navigation.navigate('ProfileScreen');
 }
 
 
@@ -75,7 +80,7 @@ const EditProfileScreen = (props) => {
         </View>
 
         <View style={styles.action}>
-         
+        <FontAwesome name="user-o" color={colors.text} size={20} />
           <TextInput
             placeholder="Name"
             value={name}
@@ -89,7 +94,7 @@ const EditProfileScreen = (props) => {
         </View>
 
         <View style={styles.action}>
-
+        <Feather name="phone" color={colors.text} size={20} />
           <TextInput
             placeholder="Phone"
             value={phone}
@@ -103,7 +108,7 @@ const EditProfileScreen = (props) => {
           />
         </View>
         <View style={styles.action}>
-       
+        <FontAwesome name="envelope-o" color={colors.text} size={20} />
           <TextInput
             placeholder="Email"
             value={email}
@@ -117,7 +122,7 @@ const EditProfileScreen = (props) => {
           />
         </View>
         <View style={styles.action}>
-       
+        <FontAwesome name="globe" color={colors.text} size={20} />
           <TextInput
             placeholder="Address"
             value={address}
@@ -130,7 +135,7 @@ const EditProfileScreen = (props) => {
           />
         </View>
         <View style={styles.action}>
-     
+        <Icon name="map-marker-outline" color={colors.text} size={20} />
           <TextInput
             placeholder="City"
             value={city}
@@ -159,7 +164,7 @@ const styles = StyleSheet.create({
   commandButton: {
     padding: 15,
     borderRadius: 10,
-    backgroundColor: '#FF6347',
+    backgroundColor: '#B2002D',
     alignItems: 'center',
     marginTop: 10,
   },
@@ -172,7 +177,7 @@ const styles = StyleSheet.create({
     // shadowColor: '#000000',
     // shadowOffset: {width: 0, height: 0},
     // shadowRadius: 5,
-    // shadowOpacity: 0.4
+    // shadowOpacity: 0.4,
   },
   header: {
     backgroundColor: '#FFFFFF',
