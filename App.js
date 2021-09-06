@@ -1,14 +1,12 @@
 import * as React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text,SafeAreaView} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import CustomerApp from './components/CustomerList';
-import Menu from './components/AppMenu';
-import AddCustomers from './components/AddCustomer';
-import EditCustomers from './components/EditCustomer';
-import LocalStorage from './components/LocalStorageAsync';
+//import Login from './components/Login';
 import Student from './components/Tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+//import profile from './components/profile1';
+//import editprofile from './components/EditProfile';
 import VillaDetails from './components/VillaDetails';
 import StartPage from './components/StartPage';
 import Login from './components/LoginVilla';
@@ -20,7 +18,8 @@ import SearchPage from './components/SearchPage';
 import more from './components/More'
 import ProfileScreen from './components/Profile';
 import EditProfile from './components/EditProfile';
-import { DefaultTheme } from '@react-navigation/native';
+import ConfirmPage from './components/ConfirmPage';
+//import {NativeModules} from 'react-native';
 
 const MyTheme = {
 
@@ -44,9 +43,6 @@ notification: 'rgb(255, 69, 58)',
 
 };
 
-
-
-
 const Stack = createStackNavigator();
 
 
@@ -55,13 +51,13 @@ const Tab = createBottomTabNavigator();
  function Tabs() {
   
   return (
-      <Tab.Navigator>
+      <Tab.Navigator Theme={MyTheme}>
         <Tab.Screen name="LocationList" component={LocationList} options={{
           tabBarShowLabel:false,
-          position:'absolute',
+          headerShown: false,
           ShowLabel:false,
           tabBarIcon: ({focused})=>(
-            <View style ={{alignItems:'center', justifyContent:'center', top:10}}>
+            <SafeAreaView style ={{alignItems:'center', justifyContent:'center', top:10}}>
                     <Icon name="home" size={30}
                     style={{
                       color:focused?'#b2002d':'#748c94'
@@ -69,11 +65,12 @@ const Tab = createBottomTabNavigator();
                 <Text style={{
                       color:focused?'#b2002d':'#748c94', fontSize:12
                     }}>Home</Text>
-            </View>
+            </SafeAreaView>
           ),
         }}/>
         <Tab.Screen name="SearchPage" component={SearchPage} options={{
           tabBarShowLabel:false,
+          headerShown: false,
           tabBarIcon: ({focused})=>(
             <View style ={{alignItems:'center', justifyContent:'center', top:10}}>
                     <Icon name="search1" size={30}
@@ -88,6 +85,7 @@ const Tab = createBottomTabNavigator();
         }}/>
         <Tab.Screen name="History" component={History} options={{
           tabBarShowLabel:false,
+          headerShown: false,
           tabBarIcon: ({focused})=>(
             <View style ={{alignItems:'center', justifyContent:'center', top:10}}>
                     <Icon name="hearto" size={30}
@@ -102,6 +100,7 @@ const Tab = createBottomTabNavigator();
         }}/>
         <Tab.Screen name="ProfileScreen" component={ProfileScreen} options={{
           tabBarShowLabel:false,
+          headerShown: false,
           tabBarIcon: ({focused})=>(
             <View style ={{alignItems:'center', justifyContent:'center', top:10}}>
                     <Icon name="user" size={30}
@@ -116,6 +115,7 @@ const Tab = createBottomTabNavigator();
         }}/>
         <Tab.Screen name="more" component={more} options={{
           tabBarShowLabel:false,
+          headerShown: false,
           tabBarIcon: ({focused})=>(
             <View style ={{alignItems:'center', justifyContent:'center', top:10}}>
                     <Icon2 name="menu" size={30}
@@ -132,20 +132,21 @@ const Tab = createBottomTabNavigator();
   );
 } 
 
-
+//NativeModules.Device.getDeviceName((err, name) => console.log("name of my device", name));
 function App() {
   return (
-   <NavigationContainer >
+   <NavigationContainer Theme={MyTheme}>
       <Stack.Navigator Theme={MyTheme}>
-      <Stack.Screen name="StartPage" component={StartPage} />
-      <Stack.Screen name="Login" component={Login} />
-      <Stack.Screen name="Tabs" component={Tabs} />
+      <Stack.Screen name="StartPage" component={StartPage} options={{ headerShown: false }}/>
+      <Stack.Screen name="Login" component={Login} options={{ headerShown: false }}/>
+      <Stack.Screen name="Tabs" component={Tabs} options={{ headerShown: false }}/>
       <Stack.Screen name="EditProfile" component={EditProfile} />
-      <Stack.Screen name="VillaDetails" component={VillaDetails} />
+      <Stack.Screen name="VillaDetails" component={VillaDetails} options={{ headerShown: false }}/>
+      <Stack.Screen name="ConfirmPage" component={ConfirmPage}options={{ headerShown: false }}/>
+
+
       </Stack.Navigator>
    </NavigationContainer>
   );
 }
 export default App;
-
-
