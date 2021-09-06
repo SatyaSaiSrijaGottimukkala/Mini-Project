@@ -7,7 +7,7 @@ Team Members -
 4. Rahul
 
 
-follow the steps to build your reactnative app
+follow the steps to build your reactnative LongstayVilla app
 
 step-1
 in your react-native folder, create a folder for components and add the files in our components folder 
