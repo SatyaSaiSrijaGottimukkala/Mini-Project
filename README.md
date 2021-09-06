@@ -21,5 +21,5 @@ check if there are all the dependencies installed in your package.json comparing
 step-4
 change the code in your Appjs with our App.js file 
 
-step-4
+step-5
 'react-native run-ios' command in your terminal
