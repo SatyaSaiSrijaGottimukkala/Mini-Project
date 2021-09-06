@@ -2,11 +2,8 @@ import * as React from 'react';
 import { View, Text,SafeAreaView} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-//import Login from './components/Login';
 import Student from './components/Tabs';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-//import profile from './components/profile1';
-//import editprofile from './components/EditProfile';
 import VillaDetails from './components/VillaDetails';
 import StartPage from './components/StartPage';
 import Login from './components/LoginVilla';
@@ -18,8 +15,9 @@ import SearchPage from './components/SearchPage';
 import more from './components/More'
 import ProfileScreen from './components/Profile';
 import EditProfile from './components/EditProfile';
+import { DefaultTheme } from '@react-navigation/native';
 import ConfirmPage from './components/ConfirmPage';
-//import {NativeModules} from 'react-native';
+
 
 const MyTheme = {
 
@@ -42,6 +40,8 @@ notification: 'rgb(255, 69, 58)',
 }
 
 };
+
+
 
 const Stack = createStackNavigator();
 
@@ -132,7 +132,7 @@ const Tab = createBottomTabNavigator();
   );
 } 
 
-//NativeModules.Device.getDeviceName((err, name) => console.log("name of my device", name));
+
 function App() {
   return (
    <NavigationContainer Theme={MyTheme}>
@@ -143,10 +143,10 @@ function App() {
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="VillaDetails" component={VillaDetails} options={{ headerShown: false }}/>
       <Stack.Screen name="ConfirmPage" component={ConfirmPage}options={{ headerShown: false }}/>
-
-
       </Stack.Navigator>
-   </NavigationContainer>
+     </NavigationContainer>
+   
   );
 }
 export default App;
+
