@@ -48,11 +48,15 @@ create a new folder name it services and add the files in our service folder
 step-3 
 we need icons and fonts for our project for which we are using react nativ vector icons as well as Montserrat-bold font style
 
-*****************commands************************
+
+*****************COMMANDS************************
+
 1.npm i react-native-vector-icons/ yarn add react-native-vector-icons
 
 
-****************commands**************************
+****************COMMANDS**************************
+
+
 
 step-4
 change the code in your Appjs with our App.js file 
