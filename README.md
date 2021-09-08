@@ -9,6 +9,9 @@ Team Members -
 
 follow the steps to build your reactnative LongstayVilla app
 step-1 : to create a react native folder 
+
+
+
 **********COMMANDS*****************
 1. cd Documents
 2. mkdir reactNative
@@ -26,7 +29,12 @@ step-1 : to create a react native folder
 14. cd pod install
 15. cd ..
 16. react-native run-ios
+
+
 ***********COMMANDS*****************
+
+
+
 run the above commands in terminal to create and setup dependencies for navgation,bottomtabs.
 check your package.json to make sure your dependecies are installed perfectly
 
