@@ -23,3 +23,8 @@ change the code in your Appjs with our App.js file
 
 step-5
 'react-native run-ios' command in your terminal
+
+node modules that need to be added :
+1. npm install react-native-paper or yarn add react-native-paper
+2. npm install react-native-reanimated or yarn add react-native-reanimated 
+3. npm install react-native-vector-icons or yarn add react-native-vector-icons
