@@ -69,3 +69,6 @@ node modules that need to be added :
 1. npm install react-native-paper or yarn add react-native-paper
 2. npm install react-native-reanimated or yarn add react-native-reanimated 
 3. npm install react-native-vector-icons or yarn add react-native-vector-icons
+4. npm install @react-navigation/bottom-tabs or yarn add @react-navigation/bottom-tabs
+5. npm install @react-navigation/stack or yarn add @react-navigation/stack
+6. npm install @react-native-community/masked-view or yarn add @react-native-community/masked-view
