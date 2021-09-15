@@ -13,7 +13,7 @@ step-1 : to create a react native folder
 
 
 **********COMMANDS*****************
-           cd Documents
+          cd Documents
           mkdir reactNative
           cd reactNative
           npm install -g react-native-cli
