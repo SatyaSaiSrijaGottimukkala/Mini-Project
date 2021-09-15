@@ -13,22 +13,22 @@ step-1 : to create a react native folder
 
 
 **********COMMANDS*****************
-1. cd Documents
-2. mkdir reactNative
-3. cd reactNative
-4. npm install -g react-native-cli
-5. react-native init LongstayVilla
-6. cd LongstayVilla
-7. yarn install
-8. react-native run-ios
-9. yarn add @react-navigation/native
-10. yarn add @react-navigation/stack
-11. yarn add react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
-12. yarn add @react-navigation/bottom-tabs
-13. cd ios
-14. cd pod install
-15. cd ..
-16. react-native run-ios
+          1. cd Documents
+          2. mkdir reactNative
+          3. cd reactNative
+          4. npm install -g react-native-cli
+          5. react-native init LongstayVilla
+          6. cd LongstayVilla
+          7. yarn install
+          8. react-native run-ios
+          9. yarn add @react-navigation/native
+          10. yarn add @react-navigation/stack
+          11. yarn add react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+          12. yarn add @react-navigation/bottom-tabs
+          13. cd ios
+          14. cd pod install
+          15. cd ..
+          16. react-native run-ios
 
 
 ***********COMMANDS*****************
@@ -52,6 +52,40 @@ we need icons and fonts for our project for which we are using react nativ vecto
 *****************COMMANDS************************
 
 1.npm i react-native-vector-icons/ yarn add react-native-vector-icons
+
+In IOS folder, go to folder with your project name ----- go to Info.plist
+and then add these in <dict>< /dict>
+
+              <key>UIAppFonts</key>
+              <array>
+              <string>AntDesign.ttf</string>
+              <string>Entypo.ttf</string>
+              <string>EvilIcons.ttf</string>
+              <string>Feather.ttf</string>
+              <string>FontAwesome.ttf</string>
+              <string>FontAwesome5_Brands.ttf</string>
+              <string>FontAwesome5_Regular.ttf</string>
+              <string>FontAwesome5_Solid.ttf</string>
+              <string>Foundation.ttf</string>
+              <string>Ionicons.ttf</string>
+              <string>MaterialCommunityIcons.ttf</string>
+              <string>MaterialIcons.ttf</string>
+              <string>Octicons.ttf</string>
+              <string>SimpleLineIcons.ttf</string>
+              <string>Zocial.ttf</string>
+              </array>
+  
+
+  After saving the file Info.plist
+  
+  Run these commands again
+  
+            cd ios
+            cd pod install
+            cd ..
+            react-native run-ios
+
+
 
 
 ****************COMMANDS**************************
