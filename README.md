@@ -13,22 +13,22 @@ step-1 : to create a react native folder
 
 
 **********COMMANDS*****************
-          1. cd Documents
-          2. mkdir reactNative
-          3. cd reactNative
-          4. npm install -g react-native-cli
-          5. react-native init LongstayVilla
-          6. cd LongstayVilla
-          7. yarn install
-          8. react-native run-ios
-          9. yarn add @react-navigation/native
-          10. yarn add @react-navigation/stack
-          11. yarn add react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
-          12. yarn add @react-navigation/bottom-tabs
-          13. cd ios
-          14. cd pod install
-          15. cd ..
-          16. react-native run-ios
+           cd Documents
+          mkdir reactNative
+          cd reactNative
+          npm install -g react-native-cli
+          react-native init LongstayVilla
+          cd LongstayVilla
+          yarn install
+          react-native run-ios
+          yarn add @react-navigation/native
+          yarn add @react-navigation/stack
+          yarn add react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+          yarn add @react-navigation/bottom-tabs
+          cd ios
+          cd pod install
+          cd ..
+          react-native run-ios
 
 
 ***********COMMANDS*****************
