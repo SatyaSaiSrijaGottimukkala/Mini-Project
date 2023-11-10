@@ -1,0 +1,76 @@
+{
+  "items": {
+    "0": {
+      "id": 0,
+      "type": "text",
+      "text": "packages",
+      "position": [
+        2050,
+        2460
+      ],
+      "dimensions": [
+        200,
+        100
+      ]
+    },
+    "1": {
+      "type": "file",
+      "path": "package.json",
+      "position": [
+        2250,
+        2320
+      ],
+      "dimensions": [
+        500,
+        360
+      ],
+      "block": {
+        "type": "file",
+        "id": "code-block",
+        "title": "Code block",
+        "description": "A basic code block",
+        "owner": "githubnext",
+        "repo": "blocks-examples",
+        "sandbox": false,
+        "entry": "/src/blocks/file-blocks/code/index.tsx"
+      },
+      "id": 1
+    },
+    "2": {
+      "type": "file",
+      "path": "App.js",
+      "position": [
+        2950,
+        2320
+      ],
+      "dimensions": [
+        500,
+        360
+      ],
+      "block": {
+        "type": "file",
+        "id": "code-block",
+        "title": "Code block",
+        "description": "A basic code block",
+        "owner": "githubnext",
+        "repo": "blocks-examples",
+        "sandbox": false,
+        "entry": "/src/blocks/file-blocks/code/index.tsx"
+      },
+      "id": 2
+    },
+    "3": {
+      "type": "text",
+      "text": "actual work",
+      "position": [
+        2970,
+        2180
+      ],
+      "dimensions": [
+        200,
+        100
+      ],
+      "id": 3
+    }
+  }
+}
