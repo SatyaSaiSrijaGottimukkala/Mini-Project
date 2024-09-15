@@ -12,6 +12,7 @@ step-1 : to create a react native folder
 
 
 
+
 **********COMMANDS*****************
           cd Documents
           mkdir reactNative
